@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,101 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Speller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NT-t9-k2u" customClass="ScrollKeyBoardHandler" customModule="Speller" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnI-ko-8vM">
+                                        <rect key="frame" x="0.0" y="248" width="414" height="322.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX6-nl-cjS">
+                                                <rect key="frame" x="30" y="104.5" width="354" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVM-xh-ANS">
+                                                <rect key="frame" x="142.5" y="188.5" width="129" height="48"/>
+                                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="contentEdgeInsets" minX="35" minY="15" maxX="35" maxY="15"/>
+                                                <state key="normal" title="Convert">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="convertButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1S-y9-FF4"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert Number To Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhp-PL-ABk">
+                                                <rect key="frame" x="28" y="25" width="358" height="39.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="33"/>
+                                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Convert for seeing spellings for the entered number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veY-zH-FL4">
+                                                <rect key="frame" x="12.5" y="256.5" width="389" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.98469782478298484" blue="0.88788388634605264" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="IX6-nl-cjS" firstAttribute="leading" secondItem="SnI-ko-8vM" secondAttribute="leading" constant="30" id="2HB-Rp-TpT"/>
+                                            <constraint firstItem="veY-zH-FL4" firstAttribute="top" secondItem="oVM-xh-ANS" secondAttribute="bottom" constant="20" id="4ri-eZ-vH0"/>
+                                            <constraint firstItem="oVM-xh-ANS" firstAttribute="top" secondItem="IX6-nl-cjS" secondAttribute="bottom" constant="40" id="ImT-sE-nC8"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="KVZ-rf-tzu"/>
+                                            <constraint firstItem="veY-zH-FL4" firstAttribute="leading" secondItem="SnI-ko-8vM" secondAttribute="leading" constant="12.5" id="LRW-yN-2aL"/>
+                                            <constraint firstItem="zhp-PL-ABk" firstAttribute="centerX" secondItem="SnI-ko-8vM" secondAttribute="centerX" id="Tog-3e-R0T"/>
+                                            <constraint firstAttribute="trailing" secondItem="IX6-nl-cjS" secondAttribute="trailing" constant="30" id="W0N-H9-sYV"/>
+                                            <constraint firstItem="zhp-PL-ABk" firstAttribute="top" secondItem="SnI-ko-8vM" secondAttribute="top" constant="25" id="pEW-gS-SdL"/>
+                                            <constraint firstItem="oVM-xh-ANS" firstAttribute="centerX" secondItem="IX6-nl-cjS" secondAttribute="centerX" id="pUU-zY-aEc"/>
+                                            <constraint firstItem="IX6-nl-cjS" firstAttribute="top" secondItem="zhp-PL-ABk" secondAttribute="bottom" constant="40" id="pwx-ro-pa3"/>
+                                            <constraint firstAttribute="bottom" secondItem="veY-zH-FL4" secondAttribute="bottom" constant="25" id="rb7-1i-jjc"/>
+                                            <constraint firstItem="IX6-nl-cjS" firstAttribute="centerX" secondItem="SnI-ko-8vM" secondAttribute="centerX" id="s6S-6z-a0F"/>
+                                            <constraint firstAttribute="trailing" secondItem="veY-zH-FL4" secondAttribute="trailing" constant="12.5" id="sTE-xz-mWl"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SnI-ko-8vM" firstAttribute="centerY" secondItem="9NT-t9-k2u" secondAttribute="centerY" id="RgR-DO-KLK"/>
+                                    <constraint firstItem="SnI-ko-8vM" firstAttribute="width" secondItem="9NT-t9-k2u" secondAttribute="width" id="SNR-Zp-0y5"/>
+                                    <constraint firstItem="SnI-ko-8vM" firstAttribute="leading" secondItem="9NT-t9-k2u" secondAttribute="leading" id="gWb-Oj-3Z8"/>
+                                    <constraint firstAttribute="bottom" secondItem="SnI-ko-8vM" secondAttribute="bottom" id="hc2-Ok-zJ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="SnI-ko-8vM" secondAttribute="trailing" id="kpr-tW-dua"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.73661337467611299" green="0.71038165853943747" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9NT-t9-k2u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2VB-qR-gnQ"/>
+                            <constraint firstItem="9NT-t9-k2u" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7cX-Xb-DWB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9NT-t9-k2u" secondAttribute="bottom" id="NZk-PL-PRR"/>
+                            <constraint firstItem="9NT-t9-k2u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bLc-SM-1Tt"/>
+                            <constraint firstItem="9NT-t9-k2u" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="soy-2r-its"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="convertButton" destination="oVM-xh-ANS" id="wFY-fd-0nG"/>
+                        <outlet property="numberTextField" destination="IX6-nl-cjS" id="kqe-Fa-EWr"/>
+                        <outlet property="resultLabel" destination="veY-zH-FL4" id="M7Q-kz-CqC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="317" y="146"/>
         </scene>
     </scenes>
 </document>

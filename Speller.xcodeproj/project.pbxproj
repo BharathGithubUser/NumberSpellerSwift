@@ -15,6 +15,7 @@
 		CE6ABA932438417F004B8D81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6ABA912438417F004B8D81 /* LaunchScreen.storyboard */; };
 		CE6ABA9E2438417F004B8D81 /* SpellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6ABA9D2438417F004B8D81 /* SpellerTests.swift */; };
 		CE6ABAA92438417F004B8D81 /* SpellerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6ABAA82438417F004B8D81 /* SpellerUITests.swift */; };
+		CE6ABAB72438810E004B8D81 /* ScrollKeyBoardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6ABAB62438810E004B8D81 /* ScrollKeyBoardHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CE6ABAA42438417F004B8D81 /* SpellerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpellerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6ABAA82438417F004B8D81 /* SpellerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellerUITests.swift; sourceTree = "<group>"; };
 		CE6ABAAA2438417F004B8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE6ABAB62438810E004B8D81 /* ScrollKeyBoardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollKeyBoardHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				CE6ABA8F2438417F004B8D81 /* Assets.xcassets */,
 				CE6ABA912438417F004B8D81 /* LaunchScreen.storyboard */,
 				CE6ABA942438417F004B8D81 /* Info.plist */,
+				CE6ABAB62438810E004B8D81 /* ScrollKeyBoardHandler.swift */,
 			);
 			path = Speller;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6ABAB72438810E004B8D81 /* ScrollKeyBoardHandler.swift in Sources */,
 				CE6ABA8B2438417E004B8D81 /* ViewController.swift in Sources */,
 				CE6ABA872438417E004B8D81 /* AppDelegate.swift in Sources */,
 				CE6ABA892438417E004B8D81 /* SceneDelegate.swift in Sources */,
